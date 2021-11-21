@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(241, 241, 241);
+}
+/* General */
+.fa {
+  color: #4183d7;
+}
+a {
+  border-bottom: 2px solid blue;
+}
+p {
+  margin: 20px 0;
+}
+
+/* Other */
+.box {
+  padding: 60px 0;
+}
+
+.box-part {
+  background-color: #fff;
+  padding: 60px 10px;
+  margin: 30px 0;
+}

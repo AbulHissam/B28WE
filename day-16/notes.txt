@@ -1,0 +1,7 @@
+innerHTML-This will parse the Html element given inside a string
+innerText-This will not parse
+
+Important DOM Methods
+document.getElementById('id')
+return type is always HTML element
+if id is not available null will be returned
