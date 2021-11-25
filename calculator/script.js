@@ -112,9 +112,6 @@ buttons_array[18].addEventListener("click", () => {
 // Numbers
 const numbers_button = document.getElementsByClassName("btn-numbers");
 for (let i = 0; i < numbers_button.length; i++) {
-  // numbers_button[i].addEventListener("keydown", (e) => {
-  //   console.log(e.code);
-  // });
   numbers_button[i].addEventListener("click", () => {
     display.value += numbers_button[i].innerText;
   });
