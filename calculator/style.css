@@ -1,0 +1,31 @@
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: rgb(232, 250, 250);
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+}
+.buttons {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-equal {
+  grid-column: 3/-1;
+}
