@@ -28,7 +28,7 @@ buttons.className = "buttons";
 calculator_body.appendChild(buttons);
 
 // individual buttons
-const number = [4, 5, 6, 8, 9, 10, 12, 13, 14, 16];
+const number = [4, 5, 6, 8, 9, 10, 12, 13, 14, 17];
 const operations = [0, 3, 7, 11, 15];
 const button_classes = "btn btn-outline-secondary";
 const buttons_array = [];
@@ -65,13 +65,17 @@ buttons_array[17].innerHTML = "0";
 buttons_array[18].innerHTML = ".";
 buttons_array[19].innerHTML = "=";
 
+function isNumeric(val) {
+  return /^-?\d+$/.test(val);
+}
+
 // event listener for capturing numbers
 body.addEventListener("keydown", (event) => {
   let name = event.key;
-  if (!parseInt(name)) {
-    alert(`Only Numbers allowed`);
-  } else {
+  if (isNumeric(name)) {
     display.value += name;
+  } else {
+    alert(`Only Numbers allowed`);
   }
 });
 
@@ -82,25 +86,37 @@ buttons_array[16].addEventListener("click", () => {
 
 // square
 buttons_array[1].addEventListener("click", () => {
-  if (display.value) {
-    let val = parseFloat(eval(display.value));
-    display.value = Math.pow(val, 2).toFixed(2);
+  try {
+    if (display.value) {
+      let val = parseFloat(eval(display.value));
+      display.value = Math.pow(val, 2).toFixed(2);
+    }
+  } catch (err) {
+    alert("Not valid");
   }
 });
 
 // sqrt
 buttons_array[2].addEventListener("click", () => {
-  if (display.value) {
-    let val = parseFloat(eval(display.value));
-    display.value = Math.sqrt(val).toFixed(2);
+  try {
+    if (display.value) {
+      let val = parseFloat(eval(display.value));
+      display.value = Math.sqrt(val).toFixed(2);
+    }
+  } catch (err) {
+    alert("Not valid");
   }
 });
 
 // Equal
 const equate = () => {
-  display.value = Number.isInteger(eval(display.value))
-    ? eval(display.value)
-    : eval(display.value).toFixed(2);
+  try {
+    display.value = Number.isInteger(eval(display.value))
+      ? eval(display.value)
+      : eval(display.value).toFixed(2);
+  } catch (err) {
+    alert("Not valid");
+  }
 };
 buttons_array[19].addEventListener("click", equate);
 
