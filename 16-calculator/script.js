@@ -1,5 +1,21 @@
 const body = document.body;
 
+const metadata = document.createElement("div");
+metadata.className = "metadata";
+
+const title = document.createElement("h1");
+title.id = "title";
+title.className = "title";
+title.innerText = "CALCULATOR";
+metadata.appendChild(title);
+
+const description = document.createElement("p");
+description.id = "description";
+description.className = "description";
+description.innerText = "Perform Calculations";
+metadata.appendChild(description);
+
+body.appendChild(metadata);
 // Outer container
 const outer_container = document.createElement("div");
 outer_container.className = "outer-container";
@@ -9,6 +25,7 @@ body.appendChild(outer_container);
 // display
 const display = document.createElement("input");
 display.className = "display";
+display.setAttribute("id", "result");
 display.setAttribute("type", "text");
 display.setAttribute("value", "");
 display.disabled = true;
@@ -42,6 +59,15 @@ for (let i = 0; i < 20; i++) {
 }
 buttons_array[19].className = "btn btn-primary";
 buttons_array[16].className = "btn btn-warning";
+
+// to pass testcases
+buttons_array[16].setAttribute("id", "clear");
+buttons_array[11].setAttribute("id", "add");
+buttons_array[15].setAttribute("id", "subtract");
+buttons_array[19].setAttribute("id", "equal");
+buttons_array[4].setAttribute("id", "1");
+buttons_array[5].setAttribute("id", "2");
+buttons_array[6].setAttribute("id", "3");
 
 // buttons_array[0].innerHTML = "x<sup>3</sup>";
 buttons_array[0].innerHTML = "%";
