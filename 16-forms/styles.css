@@ -39,15 +39,9 @@ form {
   width: 100%;
 }
 #btn-submit {
-  background-color: rgb(110, 135, 247);
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
   margin: 0 auto;
   width: 200px;
-  color: #fff;
-}
-#btn-submit:hover {
-  background-color: #1f3ad4;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
 }
