@@ -1,0 +1,57 @@
+{
+  "basics": {
+    "name": "Mohamed Abul Hissam A",
+    "email": "hissamrocks@gmail.com",
+    "phone": "8220240023",
+    "degree": "BE-CSE",
+    "summary": "A budding Javascript developer and Software tester",
+    "location": {
+      "address": "3/1 M.nallur road,samayapuram",
+      "postalCode": "621112",
+      "city": "Trichy",
+      "countryCode": "India",
+      "region": "IND"
+    }
+  },
+  "work": [
+    {
+      "company": "Fourkites",
+      "position": "QAE",
+      "startDate": "2020-09-01",
+      "highlights": [
+        "Carrying out the role of testing a mobile application for quality and forming test cases and test plans which will help in this process",
+        "Having knowledge on testing API, Webapp",
+        "Involved in Test Case Automation using Appium with Java for Mobile app"
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "SKCET",
+      "area": "CS",
+      "studyType": "",
+      "startDate": "2016-08-01",
+      "endDate": "2020-04-20",
+      "gpa": "8.44",
+      "courses": ["CSE"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languagess",
+      "keywords": ["HTML", "CSS", "JS", "Python", "Java"]
+    }
+  ],
+  "languages": [
+    {
+      "language": ["English", "Tamil"]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Programming",
+      "keywords": ["JavaScript", "Frontend Development"]
+    }
+  ]
+}
