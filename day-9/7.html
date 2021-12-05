@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>A Guide to HTML Forms</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      input {
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 5px 10px;
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div
+        style="
+          margin: 0 auto;
+          width: 450px;
+          border: 2px solid black;
+          padding: 0.5em;
+          margin-bottom: 0.5em;
+          font-size: 85%;
+        "
+      >
+        <form name="myForm">
+          <h1 style="color: white; background-color: red; font-size: 125%">
+            Yes! I want to subscribe to <i>Mag-O-Zine</i>
+          </h1>
+          <p>
+            <label
+              >First Name: <input type="text" name="fname" size="5"
+            /></label>
+            <label
+              >Last Name: <input type="text" name="lname" size="10"
+            /></label>
+            <br />
+            <label>Address: <input type="text" name="addr" size="20" /></label>
+            <br />
+            <label>City: <input type="text" name="city" size="6" /></label>
+            <label>State: <input type="text" name="state" size="4" /></label>
+            <label>Zip: <input type="text" name="zip" size="5" /></label>
+          </p>
+          <p>
+            Subscribe for:
+            <label
+              ><input type="radio" name="years" value="1" /> 1 year
+              ($19.95)</label
+            >
+            <label
+              ><input type="radio" name="years" value="2" /> 2 years
+              ($35.00)</label
+            >
+          </p>
+          <p>
+            Send me more information about: <br />
+            <label
+              ><input type="checkbox" name="check1" value="Computer-Zine" />
+              Computer-Zine</label
+            >
+            <br />
+            <label
+              ><input type="checkbox" name="check2" value="Fisher-Zine" />
+              Fisher-Zine</label
+            >
+            <br />
+            <label
+              ><input type="checkbox" name="check3" value="Cat-O-Zine" />
+              Cat-O-Zine</label
+            >
+          </p>
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
