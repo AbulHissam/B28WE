@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-lg center container-custom">
+      <div class="about__thirukural">
+        <p>
+          Thirukkural is considered to be the world's greatest work on ethics
+          and morality
+        </p>
+        <p>
+          Written by the poetic saint Thiruvalluvar, it is the collection of
+          1330 two-lined poems, each of which shows the path to integrity,
+          non-violence and knowledge.
+        </p>
+      </div>
+      <form class="tk__input center">
+        <label for="tkNumber" class="form-label"
+          >Enter a number between 1 and 1330</label
+        >
+        <input
+          type="text"
+          id="tkNumber"
+          class="tk__number form-control-md"
+          value=""
+        />
+        <button type="submit" id="btn-submit" class="btn btn-primary">
+          Get Kural
+        </button>
+      </form>
+      <div class="display center">
+        <div id="tk" class="tk">Your Kural will be displayed here</div>
+        <div id="tamil__meaning" class="tamil__meaning"></div>
+        <div id="english__meaning" class="english__meaning"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
