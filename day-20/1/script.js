@@ -22,6 +22,10 @@ function fetchAndSetKural(e) {
       tk_input_form.reset();
     })
     .catch((err) => {
-      alert("Not a valid request");
+      if (
+        parseInt(tkNumberInput.value) > 1330 &&
+        parseInt(tkNumberInput.value) < 0
+      )
+        alert("Not a valid request");
     });
 }
