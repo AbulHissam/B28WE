@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+  background-color: #ffd43b;
+}
+
+.nav-card {
+  width: 100vw;
+  height: 100px;
+
+  background-color: #fcc419;
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+}
+.nav-card > form {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 9999px;
+  background-color: #dae1e7;
+}
+.search {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-error {
+  border: 2px solid red;
+  border-radius: 9999px;
+}
+.search-cat {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+}
+.search-cat:focus {
+  outline: none;
+}
+.search > button {
+  border: none;
+  background-color: transparent;
+}
+.search-icon {
+  height: 18px;
+  width: 18px;
+}
+.row {
+  row-gap: 10px;
+}
+.cats {
+  margin-top: 110px;
+  overflow-y: scroll;
+}
+.catsCard {
+  width: 25%;
+  height: 20rem;
+  box-shadow: 8px 8px 5px 0px rgba(219, 219, 219, 0.93);
+  overflow: hidden;
+}
+.catsCard:hover {
+}
+.cat {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+.cat:hover {
+  transform: scale(1.2);
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  background-color: #dae1e7;
+  box-shadow: -5px 4px 15px 5px rgba(105, 105, 105, 0.75);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fefefe;
+}
+.modal-cat {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 200;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+.noResults {
+  display: none;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
