@@ -2,9 +2,7 @@ const allCatsUrl = "https://cataas.com/api/cats";
 const catImageUrl = "https://cataas.com/cat/";
 const searchByTagsUrl = "https://cataas.com/api/cats?tags=";
 
-let cats;
-let cats_container;
-let popup;
+let cats, cats_container, popup, noResults;
 
 const init = () => {
   const nav = document.createElement("nav");
@@ -25,17 +23,25 @@ const init = () => {
   </form>
   `;
   document.body.appendChild(nav);
-  const div = document.createElement("div");
 
+  const div = document.createElement("div");
   div.setAttribute("class", "cats container-fluid");
   document.body.appendChild(div);
 
-  cats = document.getElementsByClassName("cats")[0];
-  cats_container = document.getElementsByClassName("cats-container")[0];
+  // no result
+  const noResult = document.createElement("div");
+  noResult.setAttribute("class", "noResults");
+  noResult.innerHTML = `<p>No results found</p>`;
+  document.body.appendChild(noResult);
 
+  // Handling seatrch
   const btn = document.getElementById("btn");
   btn.onclick = handleSearch;
   btn.onsubmit = handleSearch;
+
+  cats = document.getElementsByClassName("cats")[0];
+  cats_container = document.getElementsByClassName("cats-container")[0];
+  noResults = document.getElementsByClassName("noResults")[0];
 
   createModal();
 };
@@ -81,14 +87,8 @@ const fetchAllCats = async () => {
   return catsId;
 };
 
-const handleImageClick = () => {
-  popup.style.display = "block";
-  console.log("hell0");
-};
-
 const displayCats = async (fetchAll, filteredCatsId) => {
   try {
-    let noResults = document.getElementsByClassName("noResults")[0];
     let catsId =
       fetchAll && !filteredCatsId ? await fetchAllCats() : filteredCatsId;
 
@@ -106,7 +106,6 @@ const displayCats = async (fetchAll, filteredCatsId) => {
         let img = document.createElement("img");
         img.setAttribute("id", "cat");
         img.setAttribute("class", "cat");
-        // img.setAttribute("class", "col-3");
         img.setAttribute("src", `${catImageUrl}${catId}`);
         img.setAttribute("alt", "cats");
 
@@ -115,6 +114,8 @@ const displayCats = async (fetchAll, filteredCatsId) => {
           div.appendChild(img);
           cats_row.appendChild(div);
         };
+
+        // On click open up a modal with corresponding cat image
         img.onclick = () => {
           popup.style.display = "block";
           // find image tag inside popup(modal)
@@ -125,7 +126,7 @@ const displayCats = async (fetchAll, filteredCatsId) => {
       cats.appendChild(cats_row);
     } else {
       // when the catsId is  empty display the no result text
-      document.getElementsByClassName("noResults")[0].style.display = "block";
+      noResults.style.display = "block";
     }
   } catch (err) {
     console.log(err);
@@ -135,17 +136,18 @@ const displayCats = async (fetchAll, filteredCatsId) => {
 const handleSearch = async (e) => {
   try {
     e.preventDefault();
-    // const modal = document.getElementById("myModal");
-    // modal.style.display = "block";
 
     let searchInput = document.getElementsByClassName("search-cat")[0];
     let searchInputValue = searchInput.value;
     let search = document.getElementsByClassName("search")[0];
 
     if (!searchInputValue) {
+      // When searchInput value is empty display red outline to indicate user
       search.classList.add("search-error");
     } else {
+      // Continue to fliter only if searchInput value is not empty
       search.classList.remove("search-error");
+
       let filteredCatsId = [];
 
       const response = await fetch(`${searchByTagsUrl}${searchInputValue}`);
@@ -154,10 +156,10 @@ const handleSearch = async (e) => {
       filteredCatsId = data.map((filteredCat) => filteredCat.id);
 
       const cats_row = document.getElementsByClassName("cats-row")[0];
-
       if (cats_row) {
         cats.removeChild(cats_row);
       }
+      // Dont display all cats,display only filtered cats
       displayCats(false, filteredCatsId);
     }
 
@@ -167,6 +169,7 @@ const handleSearch = async (e) => {
   }
 };
 
+// Intialize some initial elements
 init();
-
+// Display All cats at first
 displayCats(true);

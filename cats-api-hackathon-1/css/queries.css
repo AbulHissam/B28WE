@@ -9,6 +9,7 @@
     height: 40%;
   }
 }
+
 @media screen and (max-width: 450px) {
   .search-cat {
     font-size: 1.2rem;
@@ -22,7 +23,11 @@
     width: 60%;
     height: 30%;
   }
+  .noResults {
+    font-size: 1.8rem;
+  }
 }
+
 @media screen and (max-width: 370px) {
   .nav-card {
     height: 80px;
@@ -49,7 +54,11 @@
     width: 60%;
     height: 30%;
   }
+  .noResults {
+    font-size: 1.6rem;
+  }
 }
+
 @media screen and (max-width: 280px) {
   .search-cat {
     font-size: 0.8rem;
@@ -69,5 +78,8 @@
   .modal {
     width: 60%;
     height: 30%;
+  }
+  .noResults {
+    font-size: 1.5rem;
   }
 }
