@@ -2,7 +2,7 @@ const allCatsUrl = "https://cataas.com/api/cats";
 const catImageUrl = "https://cataas.com/cat/";
 const searchByTagsUrl = "https://cataas.com/api/cats?tags=";
 
-let cats, cats_container, popup, noResults;
+let cats, cats_container, popup, noResults, searchInput;
 
 const init = () => {
   const nav = document.createElement("nav");
@@ -141,27 +141,29 @@ const handleSearch = async (e) => {
     let searchInputValue = searchInput.value;
     let search = document.getElementsByClassName("search")[0];
 
-    if (!searchInputValue) {
-      // When searchInput value is empty display red outline to indicate user
-      search.classList.add("search-error");
-    } else {
-      // Continue to fliter only if searchInput value is not empty
-      search.classList.remove("search-error");
+    search.classList.remove("search-error");
 
-      let filteredCatsId = [];
+    let filteredCatsId = [];
 
-      const response = await fetch(`${searchByTagsUrl}${searchInputValue}`);
-      const data = await response.json();
+    const response = await fetch(`${searchByTagsUrl}${searchInputValue}`);
+    const data = await response.json();
 
-      filteredCatsId = data.map((filteredCat) => filteredCat.id);
+    filteredCatsId = data.map((filteredCat) => filteredCat.id);
 
-      const cats_row = document.getElementsByClassName("cats-row")[0];
-      if (cats_row) {
-        cats.removeChild(cats_row);
-      }
-      // Dont display all cats,display only filtered cats
-      displayCats(false, filteredCatsId);
+    const cats_row = document.getElementsByClassName("cats-row")[0];
+    if (cats_row) {
+      cats.removeChild(cats_row);
     }
+    // Dont display all cats,display only filtered cats
+    displayCats(false, filteredCatsId);
+
+    // if (!searchInputValue) {
+    //   // When searchInput value is empty display red outline to indicate user
+    //   search.classList.add("search-error");
+    // } else {
+    //   // Continue to fliter only if searchInput value is not empty
+
+    // }
 
     // searchInputValue= "";
   } catch (err) {
