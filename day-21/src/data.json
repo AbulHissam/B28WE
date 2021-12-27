@@ -1,0 +1,118 @@
+{
+  "plans": [
+    {
+      "title": "free",
+      "price": "0",
+      "availableFeatures": [
+        {
+          "title": "Single User",
+          "isAvailable": true
+        },
+        {
+          "title": "5GB",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Public Projects",
+          "isAvailable": true
+        },
+        {
+          "title": "Community Access",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Private Projects",
+          "isAvailable": false
+        },
+        {
+          "title": "Dedicated Phone Support",
+          "isAvailable": false
+        },
+        {
+          "title": "Free Subdomain",
+          "isAvailable": false
+        },
+        {
+          "title": "Monthly Status Reports",
+          "isAvailable": false
+        }
+      ]
+    },
+    {
+      "title": "plus",
+      "price": "9",
+      "availableFeatures": [
+        {
+          "title": "5 Users",
+          "isAvailable": true
+        },
+        {
+          "title": "50GB",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Public Projects",
+          "isAvailable": true
+        },
+        {
+          "title": "Community Access",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Private Projects",
+          "isAvailable": true
+        },
+        {
+          "title": "Dedicated Phone Support",
+          "isAvailable": true
+        },
+        {
+          "title": "Free Subdomain",
+          "isAvailable": true
+        },
+        {
+          "title": "Monthly Status Reports",
+          "isAvailable": false
+        }
+      ]
+    },
+    {
+      "title": "pro",
+      "price": "49",
+      "availableFeatures": [
+        {
+          "title": "Unlimited Users",
+          "isAvailable": true
+        },
+        {
+          "title": "150GB",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Public Projects",
+          "isAvailable": true
+        },
+        {
+          "title": "Community Access",
+          "isAvailable": true
+        },
+        {
+          "title": "Unlimited Private Projects",
+          "isAvailable": true
+        },
+        {
+          "title": "Dedicated Phone Support",
+          "isAvailable": true
+        },
+        {
+          "title": "Free Subdomain",
+          "isAvailable": true
+        },
+        {
+          "title": "Monthly Status Reports",
+          "isAvailable": true
+        }
+      ]
+    }
+  ]
+}

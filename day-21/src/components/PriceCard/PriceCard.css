@@ -1,0 +1,40 @@
+.priceCard {
+  padding: 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+.priceCard__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.priceCard__title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+.priceCard__price {
+  font-size: 3rem;
+  margin: 0;
+}
+.priceCard__period {
+  font-size: 0.8rem;
+}
+.priceCard__content > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.priceCard__content > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.priceCard__icon {
+  width: 24px;
+  height: 24px;
+}
