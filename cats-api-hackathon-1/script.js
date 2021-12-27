@@ -39,9 +39,11 @@ const init = () => {
   btn.onclick = handleSearch;
   btn.onsubmit = handleSearch;
 
-  cats = document.getElementsByClassName("cats")[0];
-  cats_container = document.getElementsByClassName("cats-container")[0];
-  noResults = document.getElementsByClassName("noResults")[0];
+  // cats = document.getElementsByClassName("cats")[0];
+  // Jquery
+  cats = $(".cats")[0];
+  cats_container = $(".cats-container")[0];
+  noResults = $(".noResults")[0];
 
   createModal();
 };
@@ -59,7 +61,7 @@ const createModal = () => {
 
   document.body.appendChild(modal);
   popup = modal;
-  const close = document.getElementsByClassName("close")[0];
+  const close = $(".close")[0];
   close.onclick = () => {
     modal.style.display = "none";
   };
@@ -137,9 +139,9 @@ const handleSearch = async (e) => {
   try {
     e.preventDefault();
 
-    let searchInput = document.getElementsByClassName("search-cat")[0];
+    let searchInput = $(".search-cat")[0];
     let searchInputValue = searchInput.value;
-    let search = document.getElementsByClassName("search")[0];
+    let search = $(".search")[0];
 
     search.classList.remove("search-error");
 
@@ -150,7 +152,7 @@ const handleSearch = async (e) => {
 
     filteredCatsId = data.map((filteredCat) => filteredCat.id);
 
-    const cats_row = document.getElementsByClassName("cats-row")[0];
+    const cats_row = $(".cats-row")[0];
     if (cats_row) {
       cats.removeChild(cats_row);
     }
