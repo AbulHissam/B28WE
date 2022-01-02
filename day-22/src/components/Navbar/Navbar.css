@@ -1,0 +1,11 @@
+.shopping-cart-icon {
+  height: 16px;
+  width: 16px;
+}
+.navbar {
+  overflow: scroll;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
